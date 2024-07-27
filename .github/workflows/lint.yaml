@@ -29,8 +29,10 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pnpx prisma generate
           pnpm install --frozen-lockfile
 
       - name: Lint project
         run: |
           pnpm run lint
+          pnpm run typecheck
