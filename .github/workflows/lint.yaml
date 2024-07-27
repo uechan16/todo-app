@@ -34,3 +34,4 @@ jobs:
       - name: Lint project
         run: |
           pnpm run lint
+          pnpm run typecheck
