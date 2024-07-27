@@ -11,6 +11,10 @@ on:
 jobs:
   playwright-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -56,6 +60,13 @@ jobs:
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_bucket: ${{secrets.AWS_S3_BUCKET}}
+          aws_bucket: ${{ secrets.AWS_S3_BUCKET }}
           source_dir: tests/reports
           destination_dir: ${{ steps.set-directory.outputs.UPLOAD_DIR }}
+
+      - name: Post comments
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            Test Complete🎉
+            [View Test Result](https://uechan-backet.s3.ap-northeast-1.amazonaws.com/${{ steps.set-directory.outputs.UPLOAD_DIR }}/index.html)
