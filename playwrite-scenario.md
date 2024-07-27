@@ -1,185 +1,166 @@
 ## テストシナリオ(VRT)
-### 画面全体を確認する
-#### ログイン画面 https://todo-app-qajp.vercel.app/login
-画面サイズ：?
-ブラウザ：Chrome,Edge,Safari
-#### サインアップ画面 https://todo-app-qajp.vercel.app/register
-画面サイズ：？
-ブラウザ：Chrome,Edge,Safari
-#### To-Do画面 https://todo-app-qajp.vercel.app/todo
-画面サイズ：？
-ブラウザ：Chrome,Edge,Safari
-##### リストが0件のもの（画面全体の確認も兼ねる）
+### ログイン画面 https://todo-app-qajp.vercel.app/login
+#### 画面全体の確認
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
+* 重要度：High
+### サインアップ画面 https://todo-app-qajp.vercel.app/register
+#### 画面全体の確認
+* 画面サイズ：
+  * md	768px
+  * lg	1024px
+  * xl	1280px
+* ブラウザ：Chrome,Firefox,Safari
+* 重要度：High
+### To-Do画面 https://todo-app-qajp.vercel.app/todo
+#### リストが0件のもの（画面全体の確認も兼ねる）
+* 画面サイズ：
+  * md	768px
+  * lg	1024px
+  * xl	1280px
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test01@e.com
   * password:test123
 * 重要度：High
 
-##### リストが1件のもの
+#### リストが1件のもの
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test02@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが10件のもの
+#### リストが10件のもの
 * Rows per page:10
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test03@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが11件のもの
+#### リストが11件のもの
 * Rows per page:10
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test04@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが15件のもの
+#### リストが15件のもの
 * Rows per page:15
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test05@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが16件のもの
+#### リストが16件のもの
 * Rows per page:15
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test06@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが20件のもの
+#### リストが20件のもの
 * Rows per page:20
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test07@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが21件のもの
+#### リストが21件のもの
 * Rows per page:20
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test08@e.com
   * password:test123
 * 重要度：Mid
 
-##### リストが1件でTodoを選択した状態のもの
+#### リストが1件でTodoを選択した状態のもの
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test02@e.com
   * password:test123
 * 重要度：High
 
-##### リストが1件でTodoがActiveなもの
+#### リストが1件でTodoがActiveなもの
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
+* ログイン情報
+  * email:ue-test02@e.com
+  * password:test123
+* 重要度：High
+
+#### リストが1件でTodoがCompletedなもの
+* 画面サイズ：
+  * md	768px
+  * lg	1024px
+  * xl	1280px
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test09@e.com
   * password:test123
 * 重要度：High
 
-##### リストが1件でTodoがCompletedなもの
+#### リストが1件でTodoがBlockなもの
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
-* ログイン情報
-  * email:ue-test09@e.com
-  * password:test123
-* 重要度：High
-
-##### リストが1件でTodoがBlockなもの
-* 画面サイズ：
-  * sm	640px
-  * md	768px
-  * lg	1024px
-  * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test10@e.com
   * password:test123
 * 重要度：High
 
-##### リストが1件でTodoがToDoなもの
+#### リストが1件でTodoがotherなもの
 * 画面サイズ：
-  * sm	640px
   * md	768px
   * lg	1024px
   * xl	1280px
-  * 2xl	1536px
-* ブラウザ：Chrome,Edge,Safari
+* ブラウザ：Chrome,Firefox,Safari
 * ログイン情報
   * email:ue-test11@e.com
   * password:test123
-* 重要度：High
+* 重要度：High (できない)
