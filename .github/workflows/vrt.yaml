@@ -46,10 +46,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
-      - name: Build Playwright Docker container
-        run: |
-          docker build --tag=tah-playwright .
-
       - name: Run Playwright Docker container
         continue-on-error: true
         id: run-playwright
