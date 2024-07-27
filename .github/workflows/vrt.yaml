@@ -46,9 +46,9 @@ jobs:
         id: set-directory
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "UPLOAD_DIR=pull/${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+            echo "UPLOAD_DIR=20240727-hackathon/pull/${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
           else
-            echo "UPLOAD_DIR=main/$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+            echo "UPLOAD_DIR=20240727-hackathon/main/$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
           fi
 
       - name: Upload Playwright Test Reports
