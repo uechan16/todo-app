@@ -7,7 +7,7 @@ services:
       - 5432:5432
     volumes:
       - tah-postgres-volume:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=passw0rd
+    env_file:
+      - .env
 volumes:
   tah-postgres-volume:
