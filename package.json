@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "pretest:pw": "docker build -t tah-playwright .",
-    "test:pw": "docker run --rm -t -v `pwd`:/work tah-playwright bash -c 'npx playwright test'"
+    "test:pw": "docker run --rm -t -v `pwd`:/work tah-playwright bash -c 'npx playwright test'",
+    "test:pw-update": "docker run --rm -t -v `pwd`:/work tah-playwright bash -c 'npx playwright test --update-snapshots'"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
