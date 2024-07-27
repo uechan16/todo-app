@@ -8,7 +8,9 @@
     "db:studio": "dotenv -e .env.local -- pnpx prisma studio",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretest:pw": "docker build -t tah-playwright .",
+    "test:pw": "docker run --rm -t -v `pwd`:/work tah-playwright bash -c 'npx playwright test'"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -54,6 +56,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.3",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.38",
