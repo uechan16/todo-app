@@ -51,6 +51,8 @@ jobs:
           docker build --tag=tah-playwright .
 
       - name: Run Playwright Docker container
+        continue-on-error: true
+        id: run-playwright
         run: |
           make test-pw
 
@@ -72,9 +74,22 @@ jobs:
           source_dir: tests/reports
           destination_dir: ${{ steps.set-directory.outputs.UPLOAD_DIR }}
 
-      - name: Post comments
+      - name: Post comments on success
         uses: marocchino/sticky-pull-request-comment@v2
+        if: ${{ steps.run-playwright.outcome == 'success' }}
         with:
           message: |
             Test Complete🎉
             [View Test Result](https://uechan-backet.s3.ap-northeast-1.amazonaws.com/${{ steps.set-directory.outputs.UPLOAD_DIR }}/index.html)
+
+      - name: Post comments on failure
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: ${{ steps.run-playwright.outcome == 'failure' }}
+        with:
+          message: |
+            Test Failed😭
+            [View Test Result](https://uechan-backet.s3.ap-northeast-1.amazonaws.com/${{ steps.set-directory.outputs.UPLOAD_DIR }}/index.html)
+
+      - name: Fail if run-playwright failed
+        if: ${{ steps.run-playwright.outcome == 'failure' }}
+        run: exit 1
