@@ -26,3 +26,21 @@ jobs:
       - name: Run Playwright Docker container
         run: |
           make test-pw
+
+      - name: Configure S3 Upload Directory
+        id: set-directory
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "UPLOAD_DIR=pull/${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          else
+            echo "UPLOAD_DIR=main/$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload Playwright Test Reports
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{secrets.AWS_S3_BUCKET}}
+          source_dir: tests/reports
+          destination_dir: ${{ steps.set-directory.outputs.UPLOAD_DIR }}
