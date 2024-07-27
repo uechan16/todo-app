@@ -15,7 +15,7 @@ Access it by http://localhost:3000
 # Access local database
 npm run db:studio
 
-# run playwright
+# run playwright (use Docker)
 npm run test:pw
 
 # update VRT ScreenShot
