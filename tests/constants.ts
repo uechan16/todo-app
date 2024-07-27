@@ -11,6 +11,11 @@ export const USER = {
     password: "test123",
   },
 
+  "ue-test03": {
+    email: "ue-test03@e.com",
+    password: "test123",
+  },
+
   "ue-test09": {
     email: "ue-test09@e.com",
     password: "test123",
